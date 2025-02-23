@@ -23,6 +23,9 @@ checkBtn.addEventListener('click', () => {
         result.style.display = 'block'; 
         if(isPalindrome(userInput.value)){
           result.textContent = `${userInput.value} is a Palindrome!`;
+          setTimeout(()=>{
+            result.style.display = 'none';
+          },2000)
         }
         else{
             result.textContent = `${userInput.value} is not a Palindrome.`;
