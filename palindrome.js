@@ -2,6 +2,22 @@ const checkBtn = document.getElementById('check-btn');
 const userInput = document.getElementById('text-input');
 const result = document.getElementById('result');
 
+function localStorageget(){
+    if(localStorage.getItem('lastInput')) {
+        userInput.value = localStorage.getItem('lastInput');
+    }
+    else{
+        localStorage.setItem('lastInput', '');
+    }
+
+    userInput.addEventListener('input', () => {
+        localStorage.setItem('lastInput', userInput.value);
+    });
+
+    return;
+}
+
+localStorageget();
 checkBtn.addEventListener('click', () => {
     if(userInput.value) {
         result.style.display = 'block'; 
